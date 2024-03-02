@@ -1,0 +1,12 @@
+/build/
+
+*.out
+
+*.o
+
+.vscode/
+
+.idea/
+
+*~
+

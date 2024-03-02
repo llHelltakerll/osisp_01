@@ -1,0 +1,12 @@
+package "dirwalk"
+version "1.0"
+purpose "Recursively walk through directories and list files according to specified options."
+usage "dirwalk [dir] [options]"
+description "This program recursively walks through directories and lists files according to specified options. If no directory is provided, the current directory (./) is used."
+versiontext "Dirwalk version 1.0\nCopyright (C) 2024 Veronika"
+args ""
+
+option "links" l"Show only symbolic links (-type l)" flag off
+option "dirs" d"Show only directories (-type d)" flag off
+option "files" f"Show only files (-type f)" flag off
+option "sort" s"Sort output according to LC_COLLATE" flag off
