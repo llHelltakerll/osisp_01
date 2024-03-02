@@ -44,7 +44,7 @@ void recursive_search(const char* path, int* sort_flags, int sort_flags_number,
         }
 
         if (sort_flags_number > 0) {
-            for (int j = 0; j <= sort_flags_number; j++) {
+            for (int j = 0; j < sort_flags_number; j++) {
                 if (sort_flags[j] == namelist[i]->d_type) {
                     printf("%s\n", full_path);
                 }
@@ -70,7 +70,6 @@ int main(int argc, char** argv)
     struct gengetopt_args_info args_info;
     char* name;
     int arr[MAX_FLAGS];
-    int flags_num = 0;
     int sort_output;
 
     if (cmdline_parser(argc, argv, &args_info) != 0) exit(EXIT_FAILURE);
@@ -86,18 +85,9 @@ int main(int argc, char** argv)
 
     for (int i = 0; i < MAX_FLAGS; i++) { arr[i] = 0; }
 
-    if (args_info.dirs_flag == 1) {
-        arr[0] = DT_DIR;
-        flags_num++;
-    }
-    if (args_info.files_flag == 1) {
-        arr[1] = DT_REG;
-        flags_num++;
-    }
-    if (args_info.links_flag == 1) {
-        arr[2] = DT_LNK;
-        flags_num++;
-    }
+    if (args_info.dirs_flag == 1) { arr[0] = DT_DIR; }
+    if (args_info.files_flag == 1) { arr[1] = DT_REG; }
+    if (args_info.links_flag == 1) { arr[2] = DT_LNK; }
 
     sort_output = args_info.sort_flag;
 
@@ -105,7 +95,7 @@ int main(int argc, char** argv)
         name[strlen(name) - 1] = '\0';
     }
 
-    recursive_search(name, arr, flags_num, sort_output);
+    recursive_search(name, arr, MAX_FLAGS, sort_output);
 
     cmdline_parser_free(&args_info);
 
