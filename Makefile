@@ -20,7 +20,7 @@ vpath %.o release
 endif
 
 objects = $(OUT_DIR)/main.o $(OUT_DIR)/lib.o
-prog = $(OUT_DIR)/test
+prog = $(OUT_DIR)/dirwalk
 
 all: $(prog)
 
@@ -35,5 +35,5 @@ $(OUT_DIR)/%.o: %.c
 .PHONY: clean
 
 clean:
-	@rm -rf $(DEBUG)/* $(RELEASE)/* test
+	@rm -rf $(DEBUG)/* $(RELEASE)/* dirwalk
 
