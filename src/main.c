@@ -71,6 +71,11 @@ int main(int argc, char** argv)
 
     if (cmdline_parser(argc, argv, &args_info) != 0) exit(EXIT_FAILURE);
 
+    if (args_info.help_given) {
+        cmdline_parser_print_help();
+        exit(EXIT_SUCCESS);
+    }
+
     if (args_info.inputs_num > 1) {
         fprintf(stderr, "Only one path can be used\n");
     }
