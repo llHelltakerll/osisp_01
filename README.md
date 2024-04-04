@@ -7,8 +7,8 @@
 <h2>Компиляция</h2>
 <p>Для компиляции программы выполните следующие команды:</p>
 <pre>
-<code>git clone https://github.com/Hannah-Kaliada/OSaSP.git</code>
-<code>cd OSaSP/lab1</code>
+<code>git clone https://github.com/llHelltakerll/osisp_01.git</code>
+<code>cd osisp_01/lab1</code>
 <code>make</code>
 <code>./dirwalk -h /path/to/directory/for/scan</code>
 </pre>
